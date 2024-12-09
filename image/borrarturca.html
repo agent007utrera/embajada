@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copiando Archivos</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00FF00; /* Letras verdes estilo retro */
+            font-family: 'Courier New', monospace; /* Fuente monoespaciada */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        img {
+            width: auto;
+            max-width: 80%;
+            height: auto;
+            margin-bottom: 20px;
+            border: 2px solid #00FF00; /* Borde verde para la imagen */
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: #00FF00;
+            font-size: 20px;
+            text-decoration: none;
+            display: inline-block; /* Bloque para facilitar el clic */
+            margin-top: 20px;
+        }
+
+        a:hover {
+            color: #00CC00; /* Color verde más oscuro al pasar el ratón */
+        }
+    </style>
+    <script>
+        // Desactiva el historial
+        history.pushState(null, "", location.href);
+        window.onpopstate = function () {
+            history.pushState(null, "", location.href);
+        };
+    </script>
+</head>
+<body>
+
+    <!-- Imagen superior -->
+    <img src="image/borrandoturca.jpg" alt="Copiando Archivos">
+
+    <!-- Enlace a volver al inicio -->
+    <h1><a href="embajador2.html" id="option1">Volver al inicio</a></h1>
+
+    <script>
+        // Función para permitir acceso con la tecla '1'
+        document.addEventListener('keydown', function(event) {
+            if (event.key === '1') {
+                document.getElementById('option1').click(); // Simula el clic en el enlace
+            }
+        });
+    </script>
+
+</body>
+</html>

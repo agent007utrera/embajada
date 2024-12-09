@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embajada Polaca - Acceso</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00FF00; /* Letras verdes al estilo de los 1980s */
+            font-family: 'Courier New', monospace; /* Fuente monoespaciada típica de los 80s */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        header img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .login-container {
+            background-color: black;
+            border: 2px solid #00FF00; /* Borde verde */
+            padding: 20px;
+            width: 300px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #00FF00;
+            background-color: black;
+            color: #00FF00;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+            color: black;
+            background-color: #00FF00;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #00CC00;
+        }
+
+        .error {
+            color: red;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        // Desactiva el historial
+        history.pushState(null, "", location.href);
+        window.onpopstate = function () {
+            history.pushState(null, "", location.href);
+        };
+    </script>
+</head>
+<body>
+
+    <header>
+        <img src="image/logo.jpg" alt="Logo de la Embajada Polaca">
+        <h1>Embajada Polaca en Berlín Oriental</h1>
+    </header>
+
+    <div class="login-container">
+        <h1>Sr. Embajadora, introduzca contraseña:</h1>
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="acceder()">ACCEDER</button>
+        <button type="reset" onclick="resetear()">RESET</button>
+        <p id="errorMessage" class="error"></p>
+    </div>
+
+    <script>
+        function acceder() {
+            const password = document.getElementById("password").value.trim();
+            const errorMessage = document.getElementById("errorMessage");
+
+            // Verifica si la contraseña es correcta
+            if (password === "dame") {
+                window.location.href = "menuembajadora2.html"; // Si la contraseña es correcta, redirige
+            } else {
+                errorMessage.textContent = "Contraseña errónea"; // Muestra mensaje de error si la contraseña es incorrecta
+            }
+        }
+
+        function resetear() {
+            document.getElementById("password").value = ""; // Limpia el campo de la contraseña
+            document.getElementById("errorMessage").textContent = ""; // Limpia el mensaje de error
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embajada Polaca - Acceso</title>
+    <style>
+        body {
+            background-color: black;
+            color: #00FF00; /* Letras verdes estilo 1980s */
+            font-family: 'Courier New', monospace; /* Fuente monoespaciada */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        header img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .option-container {
+            background-color: black;
+            border: 2px solid #00FF00; /* Borde verde */
+            padding: 20px;
+            width: 500px; /* Cuadro de selección más largo */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+            margin-bottom: 10px;
+            text-align: left;
+            margin-top: 10px;
+        }
+
+        a {
+            color: #00FF00;
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+        }
+
+        a:hover {
+            color: #00CC00;
+        }
+    </style>
+    <script>
+        // Desactiva el historial
+        history.pushState(null, "", location.href);
+        window.onpopstate = function () {
+            history.pushState(null, "", location.href);
+        };
+    </script>
+</head>
+<body>
+
+    <header>
+        <img src="image/logo.jpg" alt="Logo de la Embajada Polaca">
+        <h1>Embajada Polaca en Berlín Oriental</h1>
+    </header>
+
+    <!-- Opción 1: Ordenador del Embajador -->
+    <div class="option-container">
+        <h2><a href="embajador.html" id="option1">1) Ordenador del Embajador</a></h2>
+    </div>
+
+    <!-- Opción 2: Ordenador de la Embajadora -->
+    <div class="option-container">
+        <h2><a href="embajadora.html" id="option2">2) Ordenador de la Embajadora</a></h2>
+    </div>
+
+</body>
+</html>
