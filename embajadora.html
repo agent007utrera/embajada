@@ -70,6 +70,13 @@
             margin-top: 10px;
         }
     </style>
+    <script>
+        // Desactiva el historial
+        history.pushState(null, "", location.href);
+        window.onpopstate = function () {
+            history.pushState(null, "", location.href);
+        };
+    </script>
 </head>
 <body>
 

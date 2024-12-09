@@ -45,6 +45,13 @@
             color: #00CC00; /* Color verde más oscuro al pasar el ratón */
         }
     </style>
+    <script>
+        // Desactiva el historial
+        history.pushState(null, "", location.href);
+        window.onpopstate = function () {
+            history.pushState(null, "", location.href);
+        };
+    </script>
 </head>
 <body>
 
